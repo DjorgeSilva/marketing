@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   background: #000;
+  overflow-y: hidden;
 `;
 
 export const Header = styled.div`
@@ -59,16 +60,23 @@ export const MainTitle = styled.h3`
   color: #fff;
   font-weight: 400;
   text-transform: uppercase;
+  background-color: #ff007f;
 
   @media (max-width: 767px) {
     font-size: 20px;
-    padding: 0 20px;
+    padding: 2px 20px;
   }
 
   @media (min-width: 768px) {
     font-size: 30px;
-    padding: 0 50px;
+    padding: 2px 50px;
   }
+`;
+
+// Correctly
+export const Mp4 = styled.video`
+  height: 100vh;
+  width: 100%;
 `;
 
 // /* Extra small devices (phones, 600px and down) */
