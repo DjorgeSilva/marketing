@@ -3,19 +3,23 @@ import myImage from "../../assets/ultra-secreto.png";
 
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   background: #000;
-  overflow-y: hidden;
+  overflow: hidden;
 `;
 
 export const Header = styled.div`
   width: 100%;
   height: 53px;
-  background: #ff007f;
+  background: #f33;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    height: 50px;
+  }
 `;
 
 export const HeaderTitle = styled.h3`
@@ -23,7 +27,7 @@ export const HeaderTitle = styled.h3`
   font-weight: 400;
 
   @media (max-width: 767px) {
-    font-size: 14px;
+    font-size: 13px;
     padding: 0 15px;
   }
 
@@ -35,6 +39,11 @@ export const HeaderTitle = styled.h3`
 export const Main = styled.div`
   width: 100%;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const HeaderImage = styled.div`
@@ -46,8 +55,10 @@ export const HeaderImage = styled.div`
   background-position: center;
 
   @media (max-width: 767px) {
+    height: 60px;
     background-size: 80%, contain;
     margin-top: 0px;
+    background-color: #000;
   }
 
   @media (min-width: 768px) {
@@ -56,15 +67,21 @@ export const HeaderImage = styled.div`
   }
 `;
 
+export const VideoWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 export const MainTitle = styled.h3`
   color: #fff;
   font-weight: 400;
   text-transform: uppercase;
-  background-color: #ff007f;
+  background-color: #000;
+  margin-top: 0px;
 
   @media (max-width: 767px) {
-    font-size: 20px;
-    padding: 2px 20px;
+    font-size: 18px;
+    padding: 5px 20px;
   }
 
   @media (min-width: 768px) {
@@ -76,7 +93,36 @@ export const MainTitle = styled.h3`
 // Correctly
 export const Mp4 = styled.video`
   height: 100vh;
-  width: 100%;
+  width: 100%; ;
+`;
+
+export const WatchContainer = styled.div`
+  width: 95%;
+  height: 50px;
+  background-color: red;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    font-size: 12px;
+  }
+`;
+
+export const ContentText = styled.h3`
+  width: 70%;
+  color: #fff;
+  font-weight: 400;
+
+  @media (max-width: 767px) {
+    font-size: 15px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 // /* Extra small devices (phones, 600px and down) */
