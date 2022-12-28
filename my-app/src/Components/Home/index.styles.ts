@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import myImage from "../../assets/ultra-secreto.png";
 
+type ContentTextType = {
+  fontSize: number;
+  color: string;
+  isUppercase: boolean;
+};
+
 export const Container = styled.div`
   width: 100%;
   height: fit-content;
@@ -96,33 +102,42 @@ export const Mp4 = styled.video`
   width: 100%; ;
 `;
 
-export const WatchContainer = styled.div`
+export const WatchContainer = styled.button`
   width: 95%;
   height: 50px;
+
   background-color: red;
+  outline: 1px solid #fff;
+  color: #fff;
+  font-weight: 800;
+
   border-radius: 10px;
+  margin-bottom: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 768px) {
-    font-size: 12px;
+  &:hover {
+    background-color: rgb(255, 0, 0, 0.8);
   }
-`;
-
-export const ContentText = styled.h3`
-  width: 70%;
-  color: #fff;
-  font-weight: 400;
 
   @media (max-width: 767px) {
-    font-size: 15px;
+    font-size: 12px;
   }
 
   @media (min-width: 768px) {
     font-size: 18px;
   }
+`;
+
+export const TextContent = styled.p<ContentTextType>`
+  cursor: pointer;
+  width: 80%;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
+  color: ${({ color }) => color};
+  text-transform: ${({ isUppercase }) =>
+    isUppercase ? "uppercase" : "lowercase"};
 `;
 
 // /* Extra small devices (phones, 600px and down) */

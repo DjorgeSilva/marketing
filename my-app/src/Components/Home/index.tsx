@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 /* import video from "../../assets/video.mp4"; */
 import {
   Container,
-  ContentText,
   Header,
   HeaderImage,
   HeaderTitle,
   Main,
   MainTitle,
+  TextContent,
   VideoWrapper,
   WatchContainer as ViewerContainer,
 } from "./index.styles";
@@ -80,10 +80,13 @@ export const Home: React.FC = (): JSX.Element => {
           </video>
         </VideoWrapper>
         <ViewerContainer>
-          <ContentText>
-            Quero entrar no cross combat agora (vagas limitadas)
-          </ContentText>
+          Quero entrar no cross combat agora (vagas limitadas)
         </ViewerContainer>
+
+        <TextContent fontSize={15} color={"#4fff00"} isUppercase={true}>
+          veja abaixo resultados reais surpreendentes de pessoas reais que
+          tomaram a decisão de mudar de vida com o nosso programa!
+        </TextContent>
       </Main>
     </Container>
   );
