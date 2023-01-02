@@ -5,6 +5,7 @@ type ContentTextType = {
   fontSize: number;
   color: string;
   isUppercase: boolean;
+  margin: string;
 };
 
 export const Container = styled.div`
@@ -102,7 +103,7 @@ export const Mp4 = styled.video`
   width: 100%; ;
 `;
 
-export const WatchContainer = styled.button`
+export const ViewerContainer = styled.button`
   width: 95%;
   height: 50px;
 
@@ -138,6 +139,37 @@ export const TextContent = styled.p<ContentTextType>`
   color: ${({ color }) => color};
   text-transform: ${({ isUppercase }) =>
     isUppercase ? "uppercase" : "lowercase"};
+  margin: ${({ margin }) => margin !== "none" && margin};
+`;
+
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ResultImages = styled.img`
+  width: 95%;
+  height: 100%;
+  border-radius: 10px;
+
+  @media (min-width: 315px) {
+    width: 315px;
+  }
+`;
+
+export const GenericWrapper = styled.div`
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 // /* Extra small devices (phones, 600px and down) */
