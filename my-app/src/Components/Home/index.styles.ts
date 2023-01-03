@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import myImage from "../../assets/ultra-secreto.png";
-
-type ContentTextType = {
-  fontSize: number;
-  color: string;
-  isUppercase: boolean;
-  margin: string;
-};
+import { ButtonPropType, ContentTextType, ImagePropType } from "../../types";
 
 export const Container = styled.div`
   width: 100%;
@@ -97,15 +91,9 @@ export const MainTitle = styled.h3`
   }
 `;
 
-// Correctly
-export const Mp4 = styled.video`
-  height: 100vh;
-  width: 100%; ;
-`;
-
-export const ViewerContainer = styled.button`
-  width: 95%;
-  height: 50px;
+export const GenericButton = styled.button<ButtonPropType>`
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
 
   background-color: red;
   outline: 1px solid #fff;
@@ -113,7 +101,7 @@ export const ViewerContainer = styled.button`
   font-weight: 800;
 
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin: ${({ margin }) => margin};
 
   display: flex;
   justify-content: center;
@@ -138,8 +126,10 @@ export const TextContent = styled.p<ContentTextType>`
   font-size: ${({ fontSize }) => `${fontSize}px`};
   color: ${({ color }) => color};
   text-transform: ${({ isUppercase }) =>
-    isUppercase ? "uppercase" : "lowercase"};
+    isUppercase ? "uppercase" : "initial"};
   margin: ${({ margin }) => margin !== "none" && margin};
+  line-height: ${({ lineHeight }) =>
+    lineHeight !== "none" ? lineHeight : "none"};
 `;
 
 export const ImageWrapper = styled.div`
@@ -152,19 +142,31 @@ export const ImageWrapper = styled.div`
   align-items: center;
 `;
 
-export const ResultImages = styled.img`
+export const ResultImages = styled.img<ImagePropType>`
   width: 95%;
   height: 100%;
   border-radius: 10px;
 
   @media (min-width: 315px) {
-    width: 315px;
+    width: ${({ width }) => width};
+    margin: ${({ margin }) => margin};
   }
 `;
 
 export const GenericWrapper = styled.div`
   width: 100%;
   height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  height: 100px;
+  margin: 20px 0;
 
   display: flex;
   flex-direction: column;

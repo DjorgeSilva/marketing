@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 /* import video from "../../assets/video.mp4"; */
-import first_result from "../../assets/result-01.png";
-import second_result from "../../assets/result-02.png";
-import third_result from "../../assets/result-03.png";
-import fourth_result from "../../assets/result-04.png";
-import fifth_result from "../../assets/result-05.png";
-import { mockList } from "../../constants";
-import { ListType } from "../../types";
+import garantiaImage from "../../assets/garantia.png";
+import first_resultImage from "../../assets/result-01.png";
+import second_resultImage from "../../assets/result-02.png";
+import third_resultImage from "../../assets/result-03.png";
+import fourth_resultImage from "../../assets/result-04.png";
+import fifth_resultImage from "../../assets/result-05.png";
+import { garantiaMockList, mockList } from "../../constants";
+import { GarantiaDataType, ListType } from "../../types";
 import {
   Container,
+  Footer,
+  GenericButton,
   GenericWrapper,
   Header,
   HeaderImage,
@@ -19,7 +22,6 @@ import {
   ResultImages,
   TextContent,
   VideoWrapper,
-  ViewerContainer,
 } from "./index.styles";
 export const Home: React.FC = (): JSX.Element => {
   const weekday = [
@@ -89,34 +91,33 @@ export const Home: React.FC = (): JSX.Element => {
             <source type="video/mp4" />
           </video>
         </VideoWrapper>
-        <ViewerContainer>
+        <GenericButton width="95%" height="50px" margin="0 0 10px 0">
           Quero entrar no cross combat agora (vagas limitadas)
-        </ViewerContainer>
-
+        </GenericButton>
         <TextContent
           fontSize={15}
           color={"#4fff00"}
           isUppercase={true}
           margin={"none"}
+          lineHeight={"none"}
         >
           veja abaixo resultados reais surpreendentes de pessoas reais que
           tomaram a decisão de mudar de vida com o nosso programa!
         </TextContent>
-
         <ImageWrapper>
-          <ResultImages src={first_result} />
-          <ResultImages src={second_result} />
-          <ResultImages src={third_result} />
-          <ResultImages src={fourth_result} />
-          <ResultImages src={fifth_result} />
+          <ResultImages src={first_resultImage} width={"315px"} margin={"0"} />
+          <ResultImages src={second_resultImage} width={"315px"} margin={"0"} />
+          <ResultImages src={third_resultImage} width={"315px"} margin={"0"} />
+          <ResultImages src={fourth_resultImage} width={"315px"} margin={"0"} />
+          <ResultImages src={fifth_resultImage} width={"315px"} margin={"0"} />
         </ImageWrapper>
-
         <GenericWrapper>
           <TextContent
             fontSize={15}
             color={"#4fff00"}
             isUppercase={true}
             margin={"none"}
+            lineHeight={"none"}
           >
             Depoimento em video
           </TextContent>
@@ -128,13 +129,13 @@ export const Home: React.FC = (): JSX.Element => {
             <source type="video/mp4" />
           </video>
         </GenericWrapper>
-
         <GenericWrapper>
           <TextContent
             fontSize={15}
             color={"#4fff00"}
             isUppercase={true}
             margin={"none"}
+            lineHeight={"none"}
           >
             Depoimento em video
           </TextContent>
@@ -146,13 +147,52 @@ export const Home: React.FC = (): JSX.Element => {
                 color={"#ccc"}
                 isUppercase={true}
                 margin={"6px 0px"}
+                lineHeight={"none"}
               >
                 {option.text}
               </TextContent>
             );
           })}
         </GenericWrapper>
+        <ImageWrapper>
+          <ResultImages
+            src={garantiaImage}
+            width={"220px"}
+            margin={"30px 0 20px 0"}
+          />
+        </ImageWrapper>
+
+        {garantiaMockList.map((item: GarantiaDataType) => {
+          return (
+            <TextContent
+              key={item.id}
+              fontSize={item.fontSize}
+              color={item.color}
+              isUppercase={item.isUppercase}
+              margin={item.margin}
+              lineHeight={"none"}
+            >
+              {item.text}
+            </TextContent>
+          );
+        })}
+        <GenericButton width="65%" height="50px" margin="20px 0">
+          Quero comprar agora
+        </GenericButton>
       </Main>
+      <Footer>
+        <TextContent
+          fontSize={13}
+          color={"#fff"}
+          isUppercase={false}
+          margin={"none"}
+          lineHeight={"25px"}
+        >
+          Copyright 2022 – Cross Combat ® <br /> Todos os Direitos Reservados{" "}
+          <br /> Termos de Uso - Privacidade <br />
+          Insira um disclaimer original, não use o que todos usam
+        </TextContent>
+      </Footer>
     </Container>
   );
 };
