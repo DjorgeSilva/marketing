@@ -13,11 +13,11 @@ export type GarantiaDataType = {
 };
 
 export type ContentTextType = {
-  fontSize: number;
+  fontSize?: number;
   color: string;
   isUppercase: boolean;
-  margin: string;
-  lineHeight: string;
+  margin?: string;
+  lineHeight?: string;
 };
 
 export type ImagePropType = {

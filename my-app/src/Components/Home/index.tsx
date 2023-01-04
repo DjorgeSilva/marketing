@@ -59,17 +59,21 @@ export const Home: React.FC = (): JSX.Element => {
     window.innerWidth - 20
   );
 
+  const [totalWatcher, setTotalWatcher] = useState<number>(200);
+
   useEffect(() => {
     setCurrentVideoWidth(window.innerWidth - 20);
   }, [window.innerWidth]);
 
-  const getInnerHeightForVideo = () => {
-    if (window.innerWidth <= 767) {
-      return 200;
-    } else if (window.innerWidth >= 767 && window.innerWidth <= 1200) {
-      return 700;
-    }
-  };
+  function randomIntFromInterval(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  setInterval(function () {
+    let randomNum = 0;
+    randomNum = randomIntFromInterval(70, 100);
+    setTotalWatcher(randomNum);
+  }, 9000);
 
   return (
     <Container>
@@ -78,19 +82,24 @@ export const Home: React.FC = (): JSX.Element => {
       </Header>
       <Main>
         <HeaderImage />
-        <MainTitle>
-          Aprenda a eliminar a gordura localizada e emagrecer até 7kg em 19 dias
+        <MainTitle color={"#fff"} isUppercase={true}>
+          Aprenda a eliminar a gordura localizada e emagrecer até 7kg em 14 dias
           com exercícios no conforto da sua casa
         </MainTitle>
         <VideoWrapper>
-          <video
-            controls
-            width={currentVideoWidth}
-            height={getInnerHeightForVideo()}
-          >
+          <video controls width={currentVideoWidth}>
             <source type="video/mp4" />
           </video>
         </VideoWrapper>
+        <TextContent
+          fontSize={13}
+          color={"#ccc"}
+          isUppercase={false}
+          margin={"6px 0px 20px 0"}
+          lineHeight={"none"}
+        >
+          {totalWatcher} pessoas estão assistindo esse vídeo com você
+        </TextContent>
         <GenericButton width="95%" height="50px" margin="0 0 10px 0">
           Quero entrar no cross combat agora (vagas limitadas)
         </GenericButton>
@@ -121,11 +130,7 @@ export const Home: React.FC = (): JSX.Element => {
           >
             Depoimento em video
           </TextContent>
-          <video
-            controls
-            width={currentVideoWidth}
-            height={getInnerHeightForVideo()}
-          >
+          <video controls width={currentVideoWidth}>
             <source type="video/mp4" />
           </video>
         </GenericWrapper>

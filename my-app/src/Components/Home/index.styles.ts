@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import myImage from "../../assets/ultra-secreto.png";
+import myImage from "../../assets/ultra-secreto-logo.png";
 import { ButtonPropType, ContentTextType, ImagePropType } from "../../types";
 
 export const Container = styled.div`
@@ -11,29 +11,28 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 53px;
-  background: #f33;
+  height: 50px;
+  margin-bottom: 20px;
+
+  background: #ff0000;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (max-width: 767px) {
-    height: 50px;
-  }
 `;
 
 export const HeaderTitle = styled.h3`
   color: #fff;
   font-weight: 400;
 
-  @media (max-width: 767px) {
-    font-size: 13px;
-    padding: 0 15px;
+  @media (min-width: 0px) and (max-width: 760px) {
+    font-size: 14px;
+    padding: 0 10px;
   }
 
-  @media (min-width: 768px) {
-    font-size: 18px;
+  @media (min-width: 761px) {
+    font-size: 20px;
+    padding: 0 4px;
   }
 `;
 
@@ -54,41 +53,52 @@ export const HeaderImage = styled.div`
   background-image: url(${myImage});
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #000;
 
-  @media (max-width: 767px) {
-    height: 60px;
-    background-size: 80%, contain;
-    margin-top: 0px;
-    background-color: #000;
+  @media (min-width: 0px) and (max-width: 666px) {
+    background-size: 70%, contain;
   }
 
-  @media (min-width: 768px) {
-    background-size: 40%, contain;
-    margin-top: 25px;
+  @media (min-width: 667px) and (max-width: 899px) {
+    background-size: 60%, contain;
+  }
+
+  @media (min-width: 900px) {
+    background-size: 525px, contain;
+  }
+`;
+
+export const MainTitle = styled.p<ContentTextType>`
+  cursor: pointer;
+  width: 80%;
+  font-size: ${({ fontSize }) => `${fontSize}px`};
+  color: ${({ color }) => color};
+  text-transform: ${({ isUppercase }) =>
+    isUppercase ? "uppercase" : "initial"};
+
+  margin-top: 20px;
+  line-height: 35px;
+
+  @media (min-width: 0px) and (max-width: 666px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 666px) and (max-width: 949px) {
+    width: 666px;
+    font-size: 24px;
+  }
+
+  @media (min-width: 950px) {
+    width: 800px;
+    font-size: 35px;
+    line-height: 50px;
+    margin-top: 30px;
   }
 `;
 
 export const VideoWrapper = styled.div`
   width: 100%;
   height: 100%;
-`;
-
-export const MainTitle = styled.h3`
-  color: #fff;
-  font-weight: 400;
-  text-transform: uppercase;
-  background-color: #000;
-  margin-top: 0px;
-
-  @media (max-width: 767px) {
-    font-size: 18px;
-    padding: 5px 20px;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 30px;
-    padding: 2px 50px;
-  }
 `;
 
 export const GenericButton = styled.button<ButtonPropType>`
