@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
@@ -56,15 +56,7 @@ export const Home: React.FC = (): JSX.Element => {
   const geMonth = month[currentDate.getMonth()];
   const getYear = currentDate.getFullYear();
 
-  const [currentVideoWidth, setCurrentVideoWidth] = useState<number>(
-    window.innerWidth - 20
-  );
-
   const [totalWatcher, setTotalWatcher] = useState<number>(200);
-
-  useEffect(() => {
-    setCurrentVideoWidth(window.innerWidth - 20);
-  }, [window.innerWidth]);
 
   function randomIntFromInterval(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -131,21 +123,6 @@ export const Home: React.FC = (): JSX.Element => {
             <ResultImages src={fourth_resultImage} />
           </ImageWrapper>
         </ResultWrapper>
-
-        <GenericWrapper>
-          <SubTitle>Depoimento em video</SubTitle>
-          <VideoWrapper>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/E8Yp2Jvp5ZY"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </VideoWrapper>
-        </GenericWrapper>
 
         <GenericWrapper margin="0 0 30px 0">
           <SubTitle>Cross Combat</SubTitle>
