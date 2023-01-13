@@ -39,7 +39,7 @@ export const garantiaMockList: GarantiaDataType[] = [
   {
     id: "01",
     fontSize: 15,
-    color: "#F00",
+    color: "#fff",
     isUppercase: false,
     margin: "15px 0 0 0",
     text: "Talvez você esteja inseguro...",
@@ -47,7 +47,7 @@ export const garantiaMockList: GarantiaDataType[] = [
   {
     id: "02",
     fontSize: 15,
-    color: "#F00",
+    color: "#fff",
     isUppercase: true,
     margin: "15px 0 0 0",
     text: `Por isso iremos te oferecer 7 dias de garantia incondicional
@@ -56,7 +56,7 @@ export const garantiaMockList: GarantiaDataType[] = [
   {
     id: "03",
     fontSize: 15,
-    color: "#F00",
+    color: "#fff",
     isUppercase: false,
     margin: "15px 0 0 0",
     text: `Se por algum motivo você não gostar do produto, nós devolveremos  todo o seu dinheiro
@@ -65,15 +65,15 @@ export const garantiaMockList: GarantiaDataType[] = [
   {
     id: "04",
     fontSize: 15,
-    color: "#F00",
+    color: "#fff",
     isUppercase: false,
     margin: "15px 0 0 0",
     text: "Agora ficou mais fácil de tomar a decisão, não é?",
   },
   {
     id: "05",
-    fontSize: 15,
-    color: "#fff",
+    fontSize: 20,
+    color: "#F00",
     isUppercase: true,
     margin: "15px 0 0 0",
     text: "De RS 197 por R$ 47,00 á vista ou 11x de R$ 5,08",

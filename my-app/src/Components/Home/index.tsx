@@ -56,17 +56,20 @@ export const Home: React.FC = (): JSX.Element => {
   const geMonth = month[currentDate.getMonth()];
   const getYear = currentDate.getFullYear();
 
-  const [totalWatcher, setTotalWatcher] = useState<number>(200);
+  const [totalWatcher, setTotalWatcher] = useState<number>(80);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(true);
 
-  function randomIntFromInterval(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+  /**
+   * Returns a random number between min (inclusive) and max (exclusive)
+   */
+  function getRandomArbitrary(min: number, max: number) {
+    return Math.random() * (max - min) + min;
   }
 
   setInterval(function () {
     let randomNum = 0;
-    randomNum = randomIntFromInterval(70, 100);
-    setTotalWatcher(randomNum);
+    randomNum = getRandomArbitrary(70, 100);
+    setTotalWatcher(parseInt(String(randomNum)));
   }, 9000);
 
   return (
@@ -163,7 +166,7 @@ export const Home: React.FC = (): JSX.Element => {
                 key={item.id}
                 fontSize={item.fontSize}
                 color={item.color}
-                isUppercase={item.isUppercase}
+                isUppercase={true}
                 margin={item.margin}
                 lineHeight={"none"}
               >
