@@ -57,6 +57,7 @@ export const Home: React.FC = (): JSX.Element => {
   const getYear = currentDate.getFullYear();
 
   const [totalWatcher, setTotalWatcher] = useState<number>(200);
+  const [isButtonVisible, setIsButtonVisible] = useState<boolean>(true);
 
   function randomIntFromInterval(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -82,13 +83,13 @@ export const Home: React.FC = (): JSX.Element => {
           eliminar até 9kg em 19 dias.
         </MainTitle>
 
-        <VideoWrapper>
+        <VideoWrapper onClick={() => console.log("inside click")}>
           <iframe
             width="560"
             height="315"
             src="https://www.youtube.com/embed/mj07ouYP_yE"
-            title="YouTube video player"
-            frameBorder="0"
+            title="Perca peso em 19 dias"
+            frameBorder="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
@@ -104,11 +105,13 @@ export const Home: React.FC = (): JSX.Element => {
           {totalWatcher} pessoas estão assistindo esse vídeo com você
         </TextContent>
 
-        <a href="https://pay.kiwify.com.br/SEcE09e">
-          <GenericButton>
-            Quero entrar no cross combat agora (vagas limitadas)
-          </GenericButton>
-        </a>
+        {isButtonVisible && (
+          <a href="https://pay.kiwify.com.br/SEcE09e">
+            <GenericButton>
+              Sim, eu quero emagrecer a partir de hoje!
+            </GenericButton>
+          </a>
+        )}
 
         <SubTitle>
           veja abaixo resultados reais surpreendentes de pessoas reais que
