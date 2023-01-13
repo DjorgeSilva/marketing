@@ -133,7 +133,7 @@ export const VideoWrapper = styled.div`
 `;
 
 export const GenericButton = styled.button<ButtonPropType>`
-  height: 50px;
+  /*  height: 50px;
   background-color: red;
   color: #fff;
   font-weight: 800;
@@ -143,14 +143,101 @@ export const GenericButton = styled.button<ButtonPropType>`
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 
-  &:hover {
+  /*   &:hover {
     background-color: rgb(255, 0, 0, 0.8);
+  }
+
+  @media (min-width: 0px) and (max-width: 549px) {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  @media (min-width: 550px) {
+    font-size: 14px;
+    width: 550px;
+  } */
+
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+
+  background: #ff0000;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  &:before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    position: absolute;
+    top: -5px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 8px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  &:active {
+    color: #000;
+  }
+
+  &:active:after {
+    background: transparent;
+  }
+
+  &:before {
+    opacity: 1;
+  }
+
+  &:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #820101;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
   }
 
   @media (min-width: 0px) and (max-width: 549px) {
