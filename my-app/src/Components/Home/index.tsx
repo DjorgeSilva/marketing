@@ -104,9 +104,11 @@ export const Home: React.FC = (): JSX.Element => {
           {totalWatcher} pessoas estão assistindo esse vídeo com você
         </TextContent>
 
-        <GenericButton>
-          Quero entrar no cross combat agora (vagas limitadas)
-        </GenericButton>
+        <a href="https://pay.kiwify.com.br/SEcE09e">
+          <GenericButton>
+            Quero entrar no cross combat agora (vagas limitadas)
+          </GenericButton>
+        </a>
 
         <SubTitle>
           veja abaixo resultados reais surpreendentes de pessoas reais que
@@ -168,7 +170,9 @@ export const Home: React.FC = (): JSX.Element => {
           })}
         </GenericWrapper>
 
-        <GenericButton>Quero comprar agora</GenericButton>
+        <a href="https://pay.kiwify.com.br/SEcE09e">
+          <GenericButton>Quero comprar agora</GenericButton>
+        </a>
       </Main>
       <Footer>
         <TextContent

@@ -12,6 +12,10 @@ export const Container = styled.div`
   height: fit-content;
   background: #000;
   overflow: hidden;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const Header = styled.div`
