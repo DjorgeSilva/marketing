@@ -30,6 +30,10 @@ export const HeaderTitle = styled.h3`
   color: #fff;
   font-weight: 400;
 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   @media (min-width: 0px) and (max-width: 760px) {
     font-size: 14px;
     padding: 0 10px;
@@ -84,6 +88,10 @@ export const MainTitle = styled.p<ContentTextType>`
   margin-top: 20px;
   line-height: 35px;
 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   @media (min-width: 0px) and (max-width: 666px) {
     font-size: 20px;
   }
@@ -133,6 +141,10 @@ export const GenericButton = styled.button<ButtonPropType>`
   justify-content: center;
   align-items: center;
 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   &:hover {
     background-color: rgb(255, 0, 0, 0.8);
   }
@@ -159,6 +171,10 @@ export const TextContent = styled.p<ContentTextType>`
   line-height: ${({ lineHeight }) =>
     lineHeight !== "none" ? lineHeight : "none"};
 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   @media (min-width: 550px) {
     font-size: 14px;
     width: 550px;
@@ -171,6 +187,10 @@ export const SubTitle = styled.p`
   color: #4fff00;
   text-transform: uppercase;
   line-height: 30px;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 
   @media (min-width: 650px) {
     width: 450px;

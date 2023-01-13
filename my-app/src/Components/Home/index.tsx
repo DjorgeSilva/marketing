@@ -77,8 +77,9 @@ export const Home: React.FC = (): JSX.Element => {
         <HeaderImage />
 
         <MainTitle color={"#fff"} isUppercase={true}>
-          Aprenda a eliminar a gordura localizada e emagrecer até 7kg em 14 dias
-          com exercícios no conforto da sua casa
+          Estão tentando esconder!
+          <br /> A única receita caseira de 8 ingredientes que faz o corpo
+          eliminar até 9kg em 19 dias.
         </MainTitle>
 
         <VideoWrapper>
