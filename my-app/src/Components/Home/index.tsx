@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-/* import video from "../../assets/video.mp4"; */
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
 import third_resultImage from "../../assets/result-03.png";
 import fourth_resultImage from "../../assets/result-04.png";
-import fifth_resultImage from "../../assets/result-05.png";
 import { garantiaMockList, mockList } from "../../constants";
 import { GarantiaDataType, ListType } from "../../types";
 import {
@@ -17,9 +15,12 @@ import {
   HeaderImage,
   HeaderTitle,
   ImageWrapper,
+  LogoWrapper,
   Main,
   MainTitle,
   ResultImages,
+  ResultWrapper,
+  SubTitle,
   TextContent,
   VideoWrapper,
 } from "./index.styles";
@@ -82,15 +83,24 @@ export const Home: React.FC = (): JSX.Element => {
       </Header>
       <Main>
         <HeaderImage />
+
         <MainTitle color={"#fff"} isUppercase={true}>
           Aprenda a eliminar a gordura localizada e emagrecer até 7kg em 14 dias
           com exercícios no conforto da sua casa
         </MainTitle>
+
         <VideoWrapper>
-          <video controls width={currentVideoWidth}>
-            <source type="video/mp4" />
-          </video>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/mj07ouYP_yE"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </VideoWrapper>
+
         <TextContent
           fontSize={13}
           color={"#ccc"}
@@ -100,50 +110,45 @@ export const Home: React.FC = (): JSX.Element => {
         >
           {totalWatcher} pessoas estão assistindo esse vídeo com você
         </TextContent>
-        <GenericButton width="95%" height="50px" margin="0 0 10px 0">
+
+        <GenericButton>
           Quero entrar no cross combat agora (vagas limitadas)
         </GenericButton>
-        <TextContent
-          fontSize={15}
-          color={"#4fff00"}
-          isUppercase={true}
-          margin={"none"}
-          lineHeight={"none"}
-        >
+
+        <SubTitle>
           veja abaixo resultados reais surpreendentes de pessoas reais que
           tomaram a decisão de mudar de vida com o nosso programa!
-        </TextContent>
-        <ImageWrapper>
-          <ResultImages src={first_resultImage} width={"315px"} margin={"0"} />
-          <ResultImages src={second_resultImage} width={"315px"} margin={"0"} />
-          <ResultImages src={third_resultImage} width={"315px"} margin={"0"} />
-          <ResultImages src={fourth_resultImage} width={"315px"} margin={"0"} />
-          <ResultImages src={fifth_resultImage} width={"315px"} margin={"0"} />
-        </ImageWrapper>
+        </SubTitle>
+
+        <ResultWrapper>
+          <ImageWrapper>
+            <ResultImages src={first_resultImage} />
+            <ResultImages src={second_resultImage} />
+          </ImageWrapper>
+
+          <ImageWrapper>
+            <ResultImages src={third_resultImage} />
+            <ResultImages src={fourth_resultImage} />
+          </ImageWrapper>
+        </ResultWrapper>
+
         <GenericWrapper>
-          <TextContent
-            fontSize={15}
-            color={"#4fff00"}
-            isUppercase={true}
-            margin={"none"}
-            lineHeight={"none"}
-          >
-            Depoimento em video
-          </TextContent>
-          <video controls width={currentVideoWidth}>
-            <source type="video/mp4" />
-          </video>
+          <SubTitle>Depoimento em video</SubTitle>
+          <VideoWrapper>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/E8Yp2Jvp5ZY"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </VideoWrapper>
         </GenericWrapper>
-        <GenericWrapper>
-          <TextContent
-            fontSize={15}
-            color={"#4fff00"}
-            isUppercase={true}
-            margin={"none"}
-            lineHeight={"none"}
-          >
-            Depoimento em video
-          </TextContent>
+
+        <GenericWrapper margin="0 0 30px 0">
+          <SubTitle>Cross Combat</SubTitle>
           {mockList.map((option: ListType) => {
             return (
               <TextContent
@@ -159,31 +164,33 @@ export const Home: React.FC = (): JSX.Element => {
             );
           })}
         </GenericWrapper>
-        <ImageWrapper>
+
+        <LogoWrapper>
           <ResultImages
             src={garantiaImage}
             width={"220px"}
-            margin={"30px 0 20px 0"}
+            margin={"60px 0 20px 0"}
           />
-        </ImageWrapper>
+        </LogoWrapper>
 
-        {garantiaMockList.map((item: GarantiaDataType) => {
-          return (
-            <TextContent
-              key={item.id}
-              fontSize={item.fontSize}
-              color={item.color}
-              isUppercase={item.isUppercase}
-              margin={item.margin}
-              lineHeight={"none"}
-            >
-              {item.text}
-            </TextContent>
-          );
-        })}
-        <GenericButton width="65%" height="50px" margin="20px 0">
-          Quero comprar agora
-        </GenericButton>
+        <GenericWrapper margin="20px 0 40px 0">
+          {garantiaMockList.map((item: GarantiaDataType) => {
+            return (
+              <TextContent
+                key={item.id}
+                fontSize={item.fontSize}
+                color={item.color}
+                isUppercase={item.isUppercase}
+                margin={item.margin}
+                lineHeight={"none"}
+              >
+                {item.text}
+              </TextContent>
+            );
+          })}
+        </GenericWrapper>
+
+        <GenericButton>Quero comprar agora</GenericButton>
       </Main>
       <Footer>
         <TextContent

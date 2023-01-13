@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import myImage from "../../assets/ultra-secreto-logo.png";
-import { ButtonPropType, ContentTextType, ImagePropType } from "../../types";
+import {
+  ButtonPropType,
+  ContentTextType,
+  GenericWrapperTypes,
+  ImagePropType,
+} from "../../types";
 
 export const Container = styled.div`
   width: 100%;
@@ -97,21 +102,32 @@ export const MainTitle = styled.p<ContentTextType>`
 `;
 
 export const VideoWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 666px) and (max-width: 949px) {
+    width: 80%;
+    height: 80%;
+  }
+
+  @media (min-width: 959px) {
+    width: 700px;
+    height: 400px;
+  }
 `;
 
 export const GenericButton = styled.button<ButtonPropType>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-
+  height: 50px;
   background-color: red;
-  outline: 1px solid #fff;
   color: #fff;
   font-weight: 800;
+  text-transform: uppercase;
 
   border-radius: 10px;
-  margin: ${({ margin }) => margin};
 
   display: flex;
   justify-content: center;
@@ -121,12 +137,14 @@ export const GenericButton = styled.button<ButtonPropType>`
     background-color: rgb(255, 0, 0, 0.8);
   }
 
-  @media (max-width: 767px) {
+  @media (min-width: 0px) and (max-width: 549px) {
+    width: 90%;
     font-size: 12px;
   }
 
-  @media (min-width: 768px) {
-    font-size: 18px;
+  @media (min-width: 550px) {
+    font-size: 14px;
+    width: 550px;
   }
 `;
 
@@ -140,30 +158,74 @@ export const TextContent = styled.p<ContentTextType>`
   margin: ${({ margin }) => margin !== "none" && margin};
   line-height: ${({ lineHeight }) =>
     lineHeight !== "none" ? lineHeight : "none"};
-`;
 
-export const ImageWrapper = styled.div`
-  width: 100%;
-  height: fit-content;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const ResultImages = styled.img<ImagePropType>`
-  width: 95%;
-  height: 100%;
-  border-radius: 10px;
-
-  @media (min-width: 315px) {
-    width: ${({ width }) => width};
-    margin: ${({ margin }) => margin};
+  @media (min-width: 550px) {
+    font-size: 14px;
+    width: 550px;
   }
 `;
 
-export const GenericWrapper = styled.div`
+export const SubTitle = styled.p`
+  width: 80%;
+  cursor: pointer;
+  color: #4fff00;
+  text-transform: uppercase;
+  line-height: 30px;
+
+  @media (min-width: 650px) {
+    width: 450px;
+    font-size: 24px;
+  }
+`;
+
+export const ResultWrapper = styled.div`
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 0px) and (max-width: 750px) {
+    width: 80%;
+  }
+
+  @media (min-width: 751px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 0px) and (max-width: 750px) {
+    width: 100%;
+  }
+
+  @media (min-width: 751px) {
+    width: 48%;
+  }
+`;
+
+export const LogoWrapper = styled.div`
+  @media (min-width: 0px) {
+    width: 35%;
+  }
+`;
+
+export const ResultImages = styled.img<ImagePropType>`
+  border-radius: 10px;
+
+  @media (min-width: 0px) and (max-width: 750px) {
+    width: 100%;
+  }
+`;
+
+export const GenericWrapper = styled.div<GenericWrapperTypes>`
   width: 100%;
   height: fit-content;
 
@@ -171,6 +233,8 @@ export const GenericWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  margin: ${({ margin }) => margin && margin};
 `;
 
 export const Footer = styled.div`
