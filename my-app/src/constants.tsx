@@ -39,7 +39,7 @@ export const garantiaMockList: GarantiaDataType[] = [
   {
     id: "01",
     fontSize: 15,
-    color: "#fff",
+    color: "#F00",
     isUppercase: false,
     margin: "15px 0 0 0",
     text: "Talvez você esteja inseguro...",
@@ -47,27 +47,25 @@ export const garantiaMockList: GarantiaDataType[] = [
   {
     id: "02",
     fontSize: 15,
-    color: "#fff",
+    color: "#F00",
     isUppercase: true,
     margin: "15px 0 0 0",
-    text: `Por isso iremos te oferecer ${(
-      <b>7 dias de garantia incondicional</b>
-    )}`,
+    text: `Por isso iremos te oferecer 7 dias de garantia incondicional
+    `,
   },
   {
     id: "03",
     fontSize: 15,
-    color: "#fff",
+    color: "#F00",
     isUppercase: false,
     margin: "15px 0 0 0",
-    text: `Se por algum motivo você não gostar do produto, nós devolveremos ${(
-      <b> todo o seu dinheiro</b>
-    )}`,
+    text: `Se por algum motivo você não gostar do produto, nós devolveremos  todo o seu dinheiro
+    `,
   },
   {
     id: "04",
     fontSize: 15,
-    color: "#fff",
+    color: "#F00",
     isUppercase: false,
     margin: "15px 0 0 0",
     text: "Agora ficou mais fácil de tomar a decisão, não é?",

@@ -21,12 +21,16 @@ export type ContentTextType = {
 };
 
 export type ImagePropType = {
-  width: string;
-  margin: string;
+  width?: string;
+  margin?: string;
 };
 
 export type ButtonPropType = {
-  width: string;
-  height: string;
-  margin: string;
+  width?: string;
+  height?: string;
+  margin?: string;
+};
+
+export type GenericWrapperTypes = {
+  margin?: string;
 };
