@@ -254,7 +254,6 @@ export const GenericButton = styled.button<ButtonPropType>`
 export const TextContent = styled.p<ContentTextType>`
   cursor: pointer;
   width: 80%;
-  font-size: ${({ fontSize }) => `${fontSize}px`};
   color: ${({ color }) => color};
   text-transform: ${({ isUppercase }) =>
     isUppercase ? "uppercase" : "initial"};
@@ -267,7 +266,7 @@ export const TextContent = styled.p<ContentTextType>`
   user-select: none; /* Standard syntax */
 
   @media (min-width: 550px) {
-    font-size: 14px;
+    font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "14px")};
     width: 550px;
   }
 `;
@@ -357,6 +356,9 @@ export const Footer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding-top: 40px;
+  border-top: 1px solid #00f400;
 `;
 
 // /* Extra small devices (phones, 600px and down) */
