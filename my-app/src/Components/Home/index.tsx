@@ -4,7 +4,7 @@ import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
 import third_resultImage from "../../assets/result-03.png";
 import fourth_resultImage from "../../assets/result-04.png";
-import { garantiaMockList, mockList } from "../../constants";
+import { garantiaMockList, mockList, month, weekday } from "../../constants";
 import { GarantiaDataType, ListType } from "../../types";
 import {
   Container,
@@ -25,31 +25,6 @@ import {
   VideoWrapper,
 } from "./index.styles";
 export const Home: React.FC = (): JSX.Element => {
-  const weekday = [
-    "Domingo",
-    "Segunda",
-    "Terça",
-    "Quarta",
-    "Quinta",
-    "Sexta",
-    "Sábado",
-  ];
-
-  const month = [
-    "Janeiro",
-    "Fevereiro",
-    "Março",
-    "Abril",
-    "Maio",
-    "Junho",
-    "Julho",
-    "Agosto",
-    "Setembro",
-    "Outubro",
-    "Novembro",
-    "Dezembro",
-  ];
-
   const currentDate = new Date();
   const day = weekday[currentDate.getDay()];
   const getDate = currentDate.getDate();
@@ -66,6 +41,9 @@ export const Home: React.FC = (): JSX.Element => {
     return Math.random() * (max - min) + min;
   }
 
+  /**
+   * set interval to get random number between a range
+   */
   setInterval(function () {
     let randomNum = 0;
     randomNum = getRandomArbitrary(70, 100);
