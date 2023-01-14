@@ -70,12 +70,12 @@ export const garantiaMockList: GarantiaDataType[] = [
     margin: "15px 0 0 0",
     text: "Agora ficou mais fácil de tomar a decisão, não é?",
   },
-  {
+  /*   {
     id: "05",
     fontSize: 20,
     color: "#F00",
     isUppercase: true,
     margin: "15px 0 0 0",
     text: "De RS 197 por R$ 47,00 á vista ou 11x de R$ 5,08",
-  },
+  }, */
 ];

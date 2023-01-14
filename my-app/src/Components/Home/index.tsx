@@ -118,7 +118,7 @@ export const Home: React.FC = (): JSX.Element => {
 
         <SubTitle>
           veja abaixo resultados reais surpreendentes de pessoas reais que
-          tomaram a decisão de mudar de vida com o nosso programa!
+          tomaram a decisão de mudar de vida com o nosso método!
         </SubTitle>
 
         <ResultWrapper>
@@ -175,10 +175,6 @@ export const Home: React.FC = (): JSX.Element => {
             );
           })}
         </GenericWrapper>
-
-        <a href="https://pay.kiwify.com.br/SEcE09e">
-          <GenericButton>Quero comprar agora</GenericButton>
-        </a>
       </Main>
       <Footer>
         <TextContent
