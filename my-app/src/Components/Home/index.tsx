@@ -1,7 +1,7 @@
 // -----------------------------------------------------
 // IMPORTS
 // -----------------------------------------------------
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
@@ -51,18 +51,6 @@ export const Home: React.FC = (): JSX.Element => {
   // -----------------------------------------------------
   // FUNCTIONS
   // -----------------------------------------------------
-  function handleSubmit(e: any) {
-    console.log("inside handle submit");
-  }
-  useEffect(() => {
-    const iframe = document.getElementById("iframeID");
-    iframe?.ownerDocument.body.addEventListener("click", handleSubmit);
-    /*     if (gridIframe.current && gridIframe.current) {
-      gridIframe.current.addEventListener("click", handleSubmit, false);
-      console.log("inside useEffect");
-      gridIframe.current.addEventListener("click", handleSubmit, false);
-    } */
-  }, []);
   /**
    * Returns a random number between min (inclusive) and max (exclusive)
    */
@@ -95,7 +83,7 @@ export const Home: React.FC = (): JSX.Element => {
           eliminar até 9kg em 19 dias.
         </MainTitle>
 
-        <VideoWrapper onClick={() => console.log("inside click")}>
+        <VideoWrapper>
           <iframe
             id="iframeID"
             ref={gridIframe}
