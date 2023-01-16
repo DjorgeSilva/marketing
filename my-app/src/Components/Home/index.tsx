@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+// -----------------------------------------------------
+// IMPORTS
+// -----------------------------------------------------
+import React, { useEffect, useRef, useState } from "react";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
@@ -24,16 +27,42 @@ import {
   TextContent,
   VideoWrapper,
 } from "./index.styles";
+// -----------------------------------------------------
+// HOME COMPONENT
+// -----------------------------------------------------
+/**
+ * Home page - component
+ */
 export const Home: React.FC = (): JSX.Element => {
+  // -----------------------------------------------------
+  // CONSTANTS
+  // -----------------------------------------------------
   const currentDate = new Date();
   const day = weekday[currentDate.getDay()];
   const getDate = currentDate.getDate();
   const geMonth = month[currentDate.getMonth()];
   const getYear = currentDate.getFullYear();
-
+  // -----------------------------------------------------
+  // STATES
+  // -----------------------------------------------------
   const [totalWatcher, setTotalWatcher] = useState<number>(80);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(true);
-
+  const gridIframe = useRef<HTMLIFrameElement>(null);
+  // -----------------------------------------------------
+  // FUNCTIONS
+  // -----------------------------------------------------
+  function handleSubmit(e: any) {
+    console.log("inside handle submit");
+  }
+  useEffect(() => {
+    const iframe = document.getElementById("iframeID");
+    iframe?.ownerDocument.body.addEventListener("click", handleSubmit);
+    /*     if (gridIframe.current && gridIframe.current) {
+      gridIframe.current.addEventListener("click", handleSubmit, false);
+      console.log("inside useEffect");
+      gridIframe.current.addEventListener("click", handleSubmit, false);
+    } */
+  }, []);
   /**
    * Returns a random number between min (inclusive) and max (exclusive)
    */
@@ -49,7 +78,9 @@ export const Home: React.FC = (): JSX.Element => {
     randomNum = getRandomArbitrary(70, 100);
     setTotalWatcher(parseInt(String(randomNum)));
   }, 9000);
-
+  // -----------------------------------------------------
+  // MAIN RETURN
+  // -----------------------------------------------------
   return (
     <Container>
       <Header>
@@ -66,9 +97,11 @@ export const Home: React.FC = (): JSX.Element => {
 
         <VideoWrapper onClick={() => console.log("inside click")}>
           <iframe
+            id="iframeID"
+            ref={gridIframe}
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/mj07ouYP_yE"
+            src="https://www.youtube.com/embed/mj07ouYP_yE?autoplay=1&mute=1&enablejsapi=1"
             title="Perca peso em 19 dias"
             frameBorder="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -78,7 +111,7 @@ export const Home: React.FC = (): JSX.Element => {
 
         <TextContent
           fontSize={13}
-          color={"#ccc"}
+          color={"#050303"}
           isUppercase={false}
           margin={"6px 0px 20px 0"}
           lineHeight={"none"}
