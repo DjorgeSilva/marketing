@@ -1,7 +1,7 @@
 // -----------------------------------------------------
 // IMPORTS
 // -----------------------------------------------------
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
@@ -46,7 +46,7 @@ export const Home: React.FC = (): JSX.Element => {
   // STATES
   // -----------------------------------------------------
   const [totalWatcher, setTotalWatcher] = useState<number>(80);
-  const [isButtonVisible, setIsButtonVisible] = useState<boolean>(true);
+  const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
   const gridIframe = useRef<HTMLIFrameElement>(null);
   // -----------------------------------------------------
   // FUNCTIONS
@@ -66,6 +66,17 @@ export const Home: React.FC = (): JSX.Element => {
     randomNum = getRandomArbitrary(70, 100);
     setTotalWatcher(parseInt(String(randomNum)));
   }, 9000);
+
+  /**
+   * Returns a random number between min (inclusive) and max (exclusive)
+   */
+  function getTimeOutToVideo() {
+    setIsButtonVisible(true);
+  }
+
+  useEffect(() => {
+    setTimeout(getTimeOutToVideo, 420500);
+  }, []);
   // -----------------------------------------------------
   // MAIN RETURN
   // -----------------------------------------------------
