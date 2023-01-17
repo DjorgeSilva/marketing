@@ -59,15 +59,6 @@ export const Home: React.FC = (): JSX.Element => {
   }
 
   /**
-   * set interval to get random number between a range
-   */
-  setInterval(function () {
-    let randomNum = 0;
-    randomNum = getRandomArbitrary(70, 100);
-    setTotalWatcher(parseInt(String(randomNum)));
-  }, 9000);
-
-  /**
    * Returns a random number between min (inclusive) and max (exclusive)
    */
   function getTimeOutToVideo() {
@@ -75,7 +66,16 @@ export const Home: React.FC = (): JSX.Element => {
   }
 
   useEffect(() => {
-    setTimeout(getTimeOutToVideo, 420500);
+    setTimeout(getTimeOutToVideo, 498000);
+
+    /**
+     * set interval to get random number between a range
+     */
+    setInterval(function () {
+      let randomNum = 0;
+      randomNum = getRandomArbitrary(70, 100);
+      setTotalWatcher(parseInt(String(randomNum)));
+    }, 9000);
   }, []);
   // -----------------------------------------------------
   // MAIN RETURN
@@ -110,9 +110,8 @@ export const Home: React.FC = (): JSX.Element => {
 
         <TextContent
           fontSize={13}
-          color={"#050303"}
+          color={"#fff"}
           isUppercase={false}
-          margin={"6px 0px 20px 0"}
           lineHeight={"none"}
         >
           {totalWatcher} pessoas estão assistindo esse vídeo com você
