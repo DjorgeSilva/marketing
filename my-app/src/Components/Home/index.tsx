@@ -90,8 +90,18 @@ export const Home: React.FC = (): JSX.Element => {
 
         <MainTitle color={"#fff"} isUppercase={true}>
           Estão tentando esconder!
-          <br /> A única receita caseira de 8 ingredientes que faz o corpo
-          eliminar até 9kg em 19 dias.
+          <br /> A única <span> </span>
+          <MainTitle color={"#f00"} isUppercase={true}>
+            receita caseira
+          </MainTitle>{" "}
+          de <span> </span>
+          <MainTitle color={"#f00"} isUppercase={true}>
+            8 ingredientes
+          </MainTitle>{" "}
+          que faz o corpo <span> </span>
+          <MainTitle color={"#f00"} isUppercase={true}>
+            eliminar até 9kg em 19 dias.
+          </MainTitle>
         </MainTitle>
 
         <VideoWrapper>

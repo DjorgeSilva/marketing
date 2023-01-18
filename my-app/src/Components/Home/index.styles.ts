@@ -82,6 +82,7 @@ export const HeaderImage = styled.div`
 `;
 
 export const MainTitle = styled.p<ContentTextType>`
+  display: inline;
   cursor: pointer;
   width: 80%;
   font-size: ${({ fontSize }) => `${fontSize}px`};
