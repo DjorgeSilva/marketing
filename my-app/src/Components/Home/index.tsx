@@ -160,7 +160,7 @@ export const Home: React.FC = (): JSX.Element => {
                 key={option.id}
                 fontSize={15}
                 color={"#4fff00"}
-                isUppercase={true}
+                isUppercase={false}
                 margin={"6px 0px"}
                 lineHeight={"none"}
               >
@@ -183,7 +183,7 @@ export const Home: React.FC = (): JSX.Element => {
             return (
               <TextContent
                 key={item.id}
-                fontSize={item.fontSize}
+                fontSize={16}
                 color={item.color}
                 isUppercase={true}
                 margin={item.margin}
