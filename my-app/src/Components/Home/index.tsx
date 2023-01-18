@@ -119,7 +119,7 @@ export const Home: React.FC = (): JSX.Element => {
         </VideoWrapper>
 
         <TextContent
-          fontSize={13}
+          fontSize={16}
           color={"#fff"}
           isUppercase={false}
           lineHeight={"none"}
@@ -158,8 +158,8 @@ export const Home: React.FC = (): JSX.Element => {
             return (
               <TextContent
                 key={option.id}
-                fontSize={13}
-                color={"#ccc"}
+                fontSize={15}
+                color={"#4fff00"}
                 isUppercase={true}
                 margin={"6px 0px"}
                 lineHeight={"none"}
