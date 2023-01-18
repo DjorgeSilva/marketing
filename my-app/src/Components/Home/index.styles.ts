@@ -108,7 +108,7 @@ export const MainTitle = styled.p<ContentTextType>`
 
   @media (min-width: 950px) {
     width: 800px;
-    font-size: 35px;
+    font-size: 32px;
     line-height: 50px;
     margin-top: 30px;
   }
@@ -134,35 +134,9 @@ export const VideoWrapper = styled.div`
 `;
 
 export const GenericButton = styled.button<ButtonPropType>`
-  /*  height: 50px;
-  background-color: red;
-  color: #fff;
-  font-weight: 800;
-  text-transform: uppercase;
-
-  border-radius: 10px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-
-  /*   &:hover {
-    background-color: rgb(255, 0, 0, 0.8);
-  }
-
-  @media (min-width: 0px) and (max-width: 549px) {
-    width: 90%;
-    font-size: 12px;
-  }
-
-  @media (min-width: 550px) {
-    font-size: 14px;
-    width: 550px;
-  } */
 
   height: 50px;
   border: none;
