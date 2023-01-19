@@ -2,6 +2,7 @@
 // IMPORTS
 // -----------------------------------------------------
 import React, { useEffect, useRef, useState } from "react";
+import YouTube from "react-youtube";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
@@ -58,16 +59,7 @@ export const Home: React.FC = (): JSX.Element => {
     return Math.random() * (max - min) + min;
   }
 
-  /**
-   * Returns a random number between min (inclusive) and max (exclusive)
-   */
-  function getTimeOutToVideo() {
-    setIsButtonVisible(true);
-  }
-
   useEffect(() => {
-    setTimeout(getTimeOutToVideo, 498000);
-
     /**
      * set interval to get random number between a range
      */
@@ -77,6 +69,16 @@ export const Home: React.FC = (): JSX.Element => {
       setTotalWatcher(parseInt(String(randomNum)));
     }, 9000);
   }, []);
+
+  /**
+   * get number visible
+   */
+  const getButtonVisible = () => {
+    setTimeout(() => {
+      setIsButtonVisible(true);
+    }, 498000);
+  };
+
   // -----------------------------------------------------
   // MAIN RETURN
   // -----------------------------------------------------
@@ -105,17 +107,13 @@ export const Home: React.FC = (): JSX.Element => {
         </MainTitle>
 
         <VideoWrapper>
-          <iframe
-            id="iframeID"
-            ref={gridIframe}
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/mj07ouYP_yE?autoplay=1&mute=1&enablejsapi=1"
-            title="Perca peso em 19 dias"
-            frameBorder="1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          <YouTube
+            videoId="mj07ouYP_yE"
+            onPlay={getButtonVisible}
+            onPause={() => {
+              setIsButtonVisible(true);
+            }}
+          />
         </VideoWrapper>
 
         <TextContent
