@@ -1,8 +1,8 @@
 // -----------------------------------------------------
 // IMPORTS
 // -----------------------------------------------------
-import React, { useEffect, useState } from "react";
-import YouTube from "react-youtube";
+import React, { useCallback, useEffect, useState } from "react";
+import YouTube, { YouTubeProps } from "react-youtube";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
 import second_resultImage from "../../assets/result-02.png";
@@ -44,14 +44,64 @@ export const Home: React.FC = (): JSX.Element => {
   const getDate = currentDate.getDate();
   const geMonth = month[currentDate.getMonth()];
   const getYear = currentDate.getFullYear();
+
+  const [youTubeOptions, setYouTubeOptions] = useState<YouTubeProps["opts"]>({
+    width:
+      window.innerWidth > 990
+        ? 800
+        : window.innerWidth > 522
+        ? window.innerWidth - 30
+        : window.innerWidth > 400
+        ? window.innerWidth - 20
+        : window.innerWidth - 10,
+    height: window.innerWidth < 550 ? window.innerWidth : 400,
+    playerVars: {
+      autoplay: 1,
+    },
+  });
+
   // -----------------------------------------------------
   // STATES
   // -----------------------------------------------------
   const [totalWatcher, setTotalWatcher] = useState<number>(80);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
+
   // -----------------------------------------------------
   // FUNCTIONS
   // -----------------------------------------------------
+  /**
+   * get proper size for you tube video
+   */
+  const handleChangeVideoWidth = useCallback(() => {
+    const ratio =
+      window.innerWidth > 990
+        ? 800
+        : window.innerWidth > 522
+        ? window.innerWidth - 30
+        : window.innerWidth > 400
+        ? window.innerWidth - 20
+        : window.innerWidth - 10;
+
+    console.log("width: ", ratio);
+
+    setYouTubeOptions({
+      ...youTubeOptions,
+      width: ratio,
+      height: ratio < 550 ? ratio : 400,
+    });
+  }, []);
+
+  /**
+   * resize video when screen size changes
+   */
+  useEffect(() => {
+    window.addEventListener("resize", handleChangeVideoWidth);
+
+    return function cleanup() {
+      window.removeEventListener("resize", handleChangeVideoWidth);
+    };
+  }, [handleChangeVideoWidth]);
+
   /**
    * Returns a random number between min (inclusive) and max (exclusive)
    */
@@ -113,6 +163,7 @@ export const Home: React.FC = (): JSX.Element => {
 
         <VideoWrapper>
           <YouTube
+            opts={youTubeOptions}
             videoId="mj07ouYP_yE"
             onPlay={getButtonVisible}
             onPause={() => {

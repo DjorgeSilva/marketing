@@ -131,16 +131,6 @@ export const VideoWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media (min-width: 666px) and (max-width: 949px) {
-    width: 80%;
-    height: 80%;
-  }
-
-  @media (min-width: 959px) {
-    width: 700px;
-    height: 400px;
-  }
 `;
 
 export const GenericButton = styled.button<ButtonPropType>`
