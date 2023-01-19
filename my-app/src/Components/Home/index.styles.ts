@@ -81,16 +81,27 @@ export const HeaderImage = styled.div`
   }
 `;
 
+export const TitleWrapper = styled.div`
+  width: 85%;
+  height: fit-content;
+  margin: 30px 0;
+
+  @media (min-width: 950px) {
+    width: 50%;
+    font-size: 32px;
+    line-height: 50px;
+  }
+`;
+
 export const MainTitle = styled.p<ContentTextType>`
-  display: inline;
   cursor: pointer;
-  width: 80%;
+  display: inline;
+  width: 100%;
   font-size: ${({ fontSize }) => `${fontSize}px`};
   color: ${({ color }) => color};
   text-transform: ${({ isUppercase }) =>
     isUppercase ? "uppercase" : "initial"};
 
-  margin-top: 20px;
   line-height: 35px;
 
   -webkit-user-select: none; /* Safari */
@@ -102,21 +113,20 @@ export const MainTitle = styled.p<ContentTextType>`
   }
 
   @media (min-width: 666px) and (max-width: 949px) {
-    width: 666px;
-    font-size: 24px;
+    font-size: 28px;
   }
 
   @media (min-width: 950px) {
-    width: 800px;
     font-size: 32px;
     line-height: 50px;
-    margin-top: 30px;
   }
 `;
 
 export const VideoWrapper = styled.div`
   width: 90%;
   height: 90%;
+
+  margin-bottom: 20px;
 
   display: flex;
   justify-content: center;

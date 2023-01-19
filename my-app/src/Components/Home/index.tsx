@@ -1,7 +1,7 @@
 // -----------------------------------------------------
 // IMPORTS
 // -----------------------------------------------------
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import garantiaImage from "../../assets/garantia.png";
 import first_resultImage from "../../assets/result-01.png";
@@ -26,6 +26,7 @@ import {
   ResultWrapper,
   SubTitle,
   TextContent,
+  TitleWrapper,
   VideoWrapper,
 } from "./index.styles";
 // -----------------------------------------------------
@@ -48,7 +49,6 @@ export const Home: React.FC = (): JSX.Element => {
   // -----------------------------------------------------
   const [totalWatcher, setTotalWatcher] = useState<number>(80);
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
-  const gridIframe = useRef<HTMLIFrameElement>(null);
   // -----------------------------------------------------
   // FUNCTIONS
   // -----------------------------------------------------
@@ -90,21 +90,26 @@ export const Home: React.FC = (): JSX.Element => {
       <Main>
         <HeaderImage />
 
-        <MainTitle color={"#fff"} isUppercase={true}>
-          Estão tentando esconder!
-          <br /> A única <span> </span>
+        <TitleWrapper>
+          <MainTitle color={"#fff"} isUppercase={true}>
+            Estão tentando esconder! <br /> A única <span> </span>
+          </MainTitle>
           <MainTitle color={"#f00"} isUppercase={true}>
-            receita caseira
-          </MainTitle>{" "}
-          de <span> </span>
+            receita caseira <span> </span>
+          </MainTitle>
+          <MainTitle color={"#fff"} isUppercase={true}>
+            de <span> </span>
+          </MainTitle>
           <MainTitle color={"#f00"} isUppercase={true}>
-            8 ingredientes
-          </MainTitle>{" "}
-          que faz o corpo <span> </span>
+            8 ingredientes <span> </span>
+          </MainTitle>
+          <MainTitle color={"#fff"} isUppercase={true}>
+            que faz o corpo <span> </span>
+          </MainTitle>
           <MainTitle color={"#f00"} isUppercase={true}>
             eliminar até 9kg em 19 dias.
           </MainTitle>
-        </MainTitle>
+        </TitleWrapper>
 
         <VideoWrapper>
           <YouTube
@@ -115,7 +120,6 @@ export const Home: React.FC = (): JSX.Element => {
             }}
           />
         </VideoWrapper>
-
         <TextContent
           fontSize={16}
           color={"#fff"}
@@ -124,7 +128,6 @@ export const Home: React.FC = (): JSX.Element => {
         >
           {totalWatcher} pessoas estão assistindo esse vídeo com você
         </TextContent>
-
         {isButtonVisible && (
           <a href="https://pay.kiwify.com.br/SEcE09e">
             <GenericButton>
@@ -132,12 +135,10 @@ export const Home: React.FC = (): JSX.Element => {
             </GenericButton>
           </a>
         )}
-
         <SubTitle>
           veja abaixo resultados reais surpreendentes de pessoas reais que
           tomaram a decisão de mudar de vida com o nosso método!
         </SubTitle>
-
         <ResultWrapper>
           <ImageWrapper>
             <ResultImages src={first_resultImage} />
@@ -149,7 +150,6 @@ export const Home: React.FC = (): JSX.Element => {
             <ResultImages src={fourth_resultImage} />
           </ImageWrapper>
         </ResultWrapper>
-
         <GenericWrapper margin="0 0 30px 0">
           <SubTitle>Cross Combat</SubTitle>
           {mockList.map((option: ListType) => {
@@ -167,7 +167,6 @@ export const Home: React.FC = (): JSX.Element => {
             );
           })}
         </GenericWrapper>
-
         <LogoWrapper>
           <ResultImages
             src={garantiaImage}
@@ -175,7 +174,6 @@ export const Home: React.FC = (): JSX.Element => {
             margin={"60px 0 20px 0"}
           />
         </LogoWrapper>
-
         <GenericWrapper margin="20px 0 40px 0">
           {garantiaMockList.map((item: GarantiaDataType) => {
             return (
@@ -201,7 +199,7 @@ export const Home: React.FC = (): JSX.Element => {
           margin={"none"}
           lineHeight={"25px"}
         >
-          Copyright 2022 – Cross Combat ® <br /> Todos os Direitos Reservados{" "}
+          Copyright 2022 – Cross Combat ® <br /> Todos os Direitos Reservados
           <br /> Termos de Uso - Privacidade <br />
           Insira um disclaimer original, não use o que todos usam
         </TextContent>
