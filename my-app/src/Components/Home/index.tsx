@@ -120,6 +120,7 @@ export const Home: React.FC = (): JSX.Element => {
             }}
           />
         </VideoWrapper>
+
         <TextContent
           fontSize={16}
           color={"#fff"}
@@ -128,6 +129,7 @@ export const Home: React.FC = (): JSX.Element => {
         >
           {totalWatcher} pessoas estão assistindo esse vídeo com você
         </TextContent>
+
         {isButtonVisible && (
           <a href="https://pay.kiwify.com.br/SEcE09e">
             <GenericButton>
@@ -135,10 +137,12 @@ export const Home: React.FC = (): JSX.Element => {
             </GenericButton>
           </a>
         )}
+
         <SubTitle>
           veja abaixo resultados reais surpreendentes de pessoas reais que
           tomaram a decisão de mudar de vida com o nosso método!
         </SubTitle>
+
         <ResultWrapper>
           <ImageWrapper>
             <ResultImages src={first_resultImage} />
@@ -150,6 +154,7 @@ export const Home: React.FC = (): JSX.Element => {
             <ResultImages src={fourth_resultImage} />
           </ImageWrapper>
         </ResultWrapper>
+
         <GenericWrapper margin="0 0 30px 0">
           <SubTitle>Cross Combat</SubTitle>
           {mockList.map((option: ListType) => {
@@ -167,6 +172,7 @@ export const Home: React.FC = (): JSX.Element => {
             );
           })}
         </GenericWrapper>
+
         <LogoWrapper>
           <ResultImages
             src={garantiaImage}
@@ -174,6 +180,7 @@ export const Home: React.FC = (): JSX.Element => {
             margin={"60px 0 20px 0"}
           />
         </LogoWrapper>
+
         <GenericWrapper margin="20px 0 40px 0">
           {garantiaMockList.map((item: GarantiaDataType) => {
             return (
@@ -191,6 +198,7 @@ export const Home: React.FC = (): JSX.Element => {
           })}
         </GenericWrapper>
       </Main>
+
       <Footer>
         <TextContent
           fontSize={13}
