@@ -34,3 +34,7 @@ export type ButtonPropType = {
 export type GenericWrapperTypes = {
   margin?: string;
 };
+
+/* export type FaceBookCommentType = {
+  icon: 
+} */

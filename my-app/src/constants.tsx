@@ -1,5 +1,5 @@
+import userImage from "./assets/user.png";
 import { GarantiaDataType, ListType } from "./types";
-
 export const weekday = [
   "Domingo",
   "Segunda",
@@ -94,5 +94,50 @@ export const garantiaMockList: GarantiaDataType[] = [
     isUppercase: false,
     margin: "15px 0 0 0",
     text: "Agora ficou mais fácil de tomar a decisão, não é?",
+  },
+];
+
+export const faceBookCommentsMock = [
+  {
+    id: "01",
+    icon: userImage,
+    name: "Flânelon DiJorge",
+    comment:
+      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+  },
+  {
+    id: "02",
+    icon: userImage,
+    name: "Flânelon DiJorge",
+    comment:
+      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+  },
+  {
+    id: "03",
+    icon: userImage,
+    name: "Flânelon DiJorge",
+    comment:
+      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+  },
+  {
+    id: "04",
+    icon: userImage,
+    name: "Flânelon DiJorge",
+    comment:
+      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+  },
+  {
+    id: "05",
+    icon: userImage,
+    name: "Flânelon DiJorge",
+    comment:
+      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+  },
+  {
+    id: "06",
+    icon: userImage,
+    name: "Flânelon DiJorge",
+    comment:
+      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
   },
 ];

@@ -10,7 +10,7 @@ import third_resultImage from "../../assets/result-03.png";
 import fourth_resultImage from "../../assets/result-04.png";
 import { garantiaMockList, mockList, month, weekday } from "../../constants";
 import { GarantiaDataType, ListType } from "../../types";
-import { Comments } from "../FaceBookComments/index";
+import { Comments } from "../FaceBookComments";
 import {
   Container,
   Footer,
@@ -225,6 +225,10 @@ export const Home: React.FC = (): JSX.Element => {
           })}
         </GenericWrapper>
 
+        <GenericWrapper margin="0 0 30px 0">
+          <Comments />
+        </GenericWrapper>
+
         <LogoWrapper>
           <ResultImages
             src={garantiaImage}
@@ -250,10 +254,6 @@ export const Home: React.FC = (): JSX.Element => {
           })}
         </GenericWrapper>
       </Main>
-
-      <GenericWrapper>
-        <Comments />
-      </GenericWrapper>
 
       <Footer>
         <TextContent
