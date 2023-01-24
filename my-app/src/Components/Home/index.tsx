@@ -10,6 +10,7 @@ import third_resultImage from "../../assets/result-03.png";
 import fourth_resultImage from "../../assets/result-04.png";
 import { garantiaMockList, mockList, month, weekday } from "../../constants";
 import { GarantiaDataType, ListType } from "../../types";
+import { Comments } from "../FaceBookComments/index";
 import {
   Container,
   Footer,
@@ -56,7 +57,7 @@ export const Home: React.FC = (): JSX.Element => {
         : window.innerWidth - 10,
     height: window.innerWidth < 550 ? window.innerWidth : 400,
     playerVars: {
-      autoplay: 1,
+      autoplay: 0,
     },
   });
 
@@ -249,6 +250,10 @@ export const Home: React.FC = (): JSX.Element => {
           })}
         </GenericWrapper>
       </Main>
+
+      <GenericWrapper>
+        <Comments />
+      </GenericWrapper>
 
       <Footer>
         <TextContent
