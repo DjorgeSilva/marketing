@@ -109,35 +109,25 @@ export const faceBookCommentsMock = [
     id: "02",
     icon: userImage,
     name: "Flânelon DiJorge",
-    comment:
-      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+    comment: "5 kg em 1 semana, estou amando <3",
   },
   {
     id: "03",
     icon: userImage,
     name: "Flânelon DiJorge",
     comment:
-      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+      "Passei vários anos tentando emagrecer, mais sem sucesso, estou feliz agora",
   },
   {
     id: "04",
     icon: userImage,
     name: "Flânelon DiJorge",
-    comment:
-      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+    comment: "Tomando isso e indo pra academia emagreci 10 kg em 1 mês",
   },
   {
     id: "05",
     icon: userImage,
     name: "Flânelon DiJorge",
-    comment:
-      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
-  },
-  {
-    id: "06",
-    icon: userImage,
-    name: "Flânelon DiJorge",
-    comment:
-      "Fiz o procedimento e estou feliz por ter feito essa escolha, aumentou muito a minha auto estima",
+    comment: "gostei",
   },
 ];

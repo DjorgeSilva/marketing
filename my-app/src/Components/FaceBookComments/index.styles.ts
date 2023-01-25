@@ -3,9 +3,14 @@ import { ImagePropType } from "../../types";
 
 export const MainFaceBookIContainer = styled.div`
   width: 90%;
-  height: 400px;
+  height: fit-content;
   background-color: #fff;
   border-radius: 20px;
+  padding-bottom: 20px;
+
+  @media (min-width: 650px) {
+    width: 650px;
+  }
 `;
 
 export const LikeSection = styled.div<{
@@ -68,16 +73,18 @@ export const CommentUserImage = styled.img<ImagePropType>`
 
 export const UserCommentTextWrapper = styled.div`
   width: calc(90% - 45px);
-  height: 30px;
+  height: fit-content;
   background-color: #f1f3f5;
   border-radius: 20px;
   margin-left: 5px;
 `;
 
 export const UserCommentText = styled.p`
-  font-weight: 500;
-
-  color: red;
+  text-align: left;
+  font-weight: 400;
+  color: #333;
+  font-size: 0.8em;
+  margin-left: 10px;
 
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */

@@ -36,7 +36,7 @@ export const Comments: React.FC = (): JSX.Element => {
             <CommentSection key={comment.id}>
               <CommentUserImage src={comment.icon}></CommentUserImage>
               <UserCommentTextWrapper>
-                <UserCommentText>{comment.text}</UserCommentText>
+                <UserCommentText>{comment.comment}</UserCommentText>
               </UserCommentTextWrapper>
             </CommentSection>
           );
